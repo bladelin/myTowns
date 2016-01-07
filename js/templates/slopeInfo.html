@@ -1,0 +1,33 @@
+<div class='row hide'>
+    <div class='tableBox'>
+        <div class="table">
+        <% _.each(avgTerrainSlope, function(val, type) { %>
+            <div class='table_tr'>
+                <div class='table_td title'>平均<%=Msg[type]%>坡度</div>
+                <div class='table_td value'><%=Util.formatPercent(val)%></div>
+            </div>
+        <%}); %>
+        </div>
+    </div>
+
+
+    <div class='tableBox'>
+        <div class="table">
+            <div class='table_tr'>
+                <div class='table_td'></div>
+                <% _.each(terrain, function(val, type) { %>
+                    <div class='table_td sub'><%=Msg[val]%>比例</div>
+                <%});%>
+            </div>
+            <% for (var i=0 ; i<percentSlopeRange[terrainRise].length; i++){%>
+                <div class='table_tr'>
+                    <div class='table_td title'><%=percentSlopeRange[terrainRise][i].title%></div>
+                    <% _.each(terrain, function(val, type) { %>
+                        <div class='table_td value'><%=Util.formatPercent(percentSlopeRange[type][i].value)%></div>
+                    <%});%>
+                </div>
+           <%}%>
+        </div>
+    </div>
+
+</div>

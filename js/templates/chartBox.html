@@ -1,0 +1,27 @@
+
+<div class='chartBox' id="chartBox" style="">
+    <div class="slope-container" id="slope-container">
+    </div>
+    <div class="detail-container" id="detail-container">
+    </div>
+    <div class="master-container" id="master-container">
+    </div>
+    <div class='choiceBox'>
+        <%for(i=0;i<=4;i++){
+            title = "";
+            switch(i){
+                case 0:
+                    title = "all";
+                    break;
+                default:
+                    title = 'Zone '+i;
+            }
+        %>
+            <span class='choiceButton' data-val='<%=i%>'><%=title%></span>
+        <%}%>
+    </div>
+    <div class='slopShowBox'>
+        <div class='slopShow' data-val='detail'>坡度分析</div>
+        <div class='slopShow' data-val='slope'>坡度顯示</div>
+    </div>
+</div>

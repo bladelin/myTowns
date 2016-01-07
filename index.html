@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Taiwan Distict location ver0.1</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        height:50px;
+        padding:0 0 0 20px;
+      }
+      #map {
+        height: 100%;
+        width:80%;
+                float:left;
+      }
+      #sidebar{
+        width: 20%;
+        height: 100%;
+        position:relative;
+        float:right;
+        overflow:auto;
+      }
+      .item {
+        width:100%;
+        height:20px;
+        cursor:pointer;
+        display:block;
+        border-bottom:1px solid #ccc;
+        font-size:15px;
+        padding:10px;
+        letter-spacing: 1px;
+      }
+      .item:hover {
+        background:#ccc;
+
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+        <h2>Taiwan Distict location </h2>
+    </div>
+
+
+    <script>
+
+// This example creates a simple polygon representing the Bermuda Triangle.
+
+// function setMapFitBounds(map, mapPointArray){
+//     //console.log(mapPointArray);
+//     var minLong = 999;
+//     var maxLong = -999;
+//     var minLat = 999;
+//     var maxLat = -999;
+
+//     for (var key  in mapPointArray) {
+//         if ( mapPointArray[key].lng < minLong ) minLong = mapPointArray[key].lng;
+//         if ( mapPointArray[key].lng > maxLong ) maxLong = mapPointArray[key].lng;
+//         if ( mapPointArray[key].lat < minLat ) minLat = mapPointArray[key].lat;
+//         if ( mapPointArray[key].lat > maxLat ) maxLat = mapPointArray[key].lat;
+//     }
+
+//     var fitBounds = new google.maps.LatLngBounds(
+//                     new google.maps.LatLng( minLat, minLong ),
+//                      new google.maps.LatLng( maxLat, maxLong )
+//                      );
+
+//     if(typeof(fitBounds) == "object") {
+//         map.fitBounds(fitBounds);
+//         map.panTo(fitBounds.getCenter());
+//     }
+
+//     if(map.getZoom() > 16)
+//         map.setZoom(16);
+// }
+
+// function getCityCoords(cityId)
+// {
+//     var gpsPoint = {};
+//     var cityCoords = [];
+//     var data = $.data( document.body, "data");
+//     var gpsPointArray = data[cityId].split(';')[3].split(',');
+//     var index = 1;
+//     for (var key  in gpsPointArray) {
+//         if (index % 2 == 0) {
+//             gpsPoint.lng = parseFloat(gpsPointArray[key]);
+//             cityCoords.push(gpsPoint);
+//             gpsPoint = {};
+//         }
+//         else {
+//             gpsPoint.lat = parseFloat(gpsPointArray[key]);
+//         }
+//         //console.log(gpsPoint);
+//         index++;
+//     }
+//     return cityCoords;
+// }
+
+// function drawPolygon(cityCoords)
+// {
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 11,
+//         center: cityCoords[0] ,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP
+//     });
+
+
+//     //console.log(cityCoords);
+//     var bermudaTriangle = new google.maps.Polygon({
+//         paths: cityCoords,
+//         strokeColor: '#FF0000',
+//         strokeOpacity: 0.8,
+//         strokeWeight: 2,
+//         fillColor: '#FF0000',
+//         fillOpacity: 0.35
+//     });
+//     setMapFitBounds(map, cityCoords);
+// console.log('d');
+//     bermudaTriangle.setMap(map);
+
+// }
+
+// function initMap() {
+//   $.get('./town_all_20160104105547.txt', function(raw){
+//     data = raw.split("\n");
+
+//     var sidebar =$('#sidebar');
+//     var html = '';
+//     for (var key  in data) {
+//         var item = data[key].split(';');
+//         //console.log(item);
+//         if (typeof item[0]!=undefined)
+//         html += '<div class="item" data="'+item[0]+'">'+item[0] + ''+ item[1] + ''+ item[2]+'</div>';
+//     }
+//     sidebar.html(html);
+
+//     $.data( document.body, "data", data);
+
+//     $('.item').on('click', function() {
+//         var cityId = $(this).attr('data');
+//         var cityCoords = getCityCoords(cityId)
+//         drawPolygon(cityCoords);
+//     });
+
+
+//     var cityCoords = getCityCoords(47)
+//     drawPolygon(cityCoords);
+
+//   });
+
+// }
+
+    </script>
+
+    <script data-main="js/app" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcAOcLtB0wWLYkNpytAiQHUknMVJIOEOg&signed_in=true"></script>
+  </body>
+</html>
