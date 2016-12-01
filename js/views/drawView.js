@@ -47,8 +47,8 @@ define([
         firstLoad : function()
         {
             var that = this;
-            $.get('./1.php', function(raw){
-                that.data = $.parseJSON(raw);//raw.split("\n");
+            $.getJSON('runtime/map.json', function(json){
+                that.data = json;// $.parseJSON(raw);//raw.split("\n");
                 that.model.set({"data": that.data});
                 $.data( document.body, "data", that.data);
                 console.log('first load data');
