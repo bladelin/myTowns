@@ -11,6 +11,193 @@
         margin: 0;
         padding: 0;
       }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+
+        #fountainG{
+            position:relative;
+            width:234px;
+            height:28px;
+            margin:auto;
+        }
+
+        .fountainG{
+            position:absolute;
+            top:0;
+            background-color:rgb(0,0,0);
+            width:28px;
+            height:28px;
+            animation-name:bounce_fountainG;
+                -o-animation-name:bounce_fountainG;
+                -ms-animation-name:bounce_fountainG;
+                -webkit-animation-name:bounce_fountainG;
+                -moz-animation-name:bounce_fountainG;
+            animation-duration:1.5s;
+                -o-animation-duration:1.5s;
+                -ms-animation-duration:1.5s;
+                -webkit-animation-duration:1.5s;
+                -moz-animation-duration:1.5s;
+            animation-iteration-count:infinite;
+                -o-animation-iteration-count:infinite;
+                -ms-animation-iteration-count:infinite;
+                -webkit-animation-iteration-count:infinite;
+                -moz-animation-iteration-count:infinite;
+            animation-direction:normal;
+                -o-animation-direction:normal;
+                -ms-animation-direction:normal;
+                -webkit-animation-direction:normal;
+                -moz-animation-direction:normal;
+            transform:scale(.3);
+                -o-transform:scale(.3);
+                -ms-transform:scale(.3);
+                -webkit-transform:scale(.3);
+                -moz-transform:scale(.3);
+            border-radius:19px;
+                -o-border-radius:19px;
+                -ms-border-radius:19px;
+                -webkit-border-radius:19px;
+                -moz-border-radius:19px;
+        }
+
+        #fountainG_1{
+            left:0;
+            animation-delay:0.6s;
+                -o-animation-delay:0.6s;
+                -ms-animation-delay:0.6s;
+                -webkit-animation-delay:0.6s;
+                -moz-animation-delay:0.6s;
+        }
+
+        #fountainG_2{
+            left:29px;
+            animation-delay:0.75s;
+                -o-animation-delay:0.75s;
+                -ms-animation-delay:0.75s;
+                -webkit-animation-delay:0.75s;
+                -moz-animation-delay:0.75s;
+        }
+
+        #fountainG_3{
+            left:58px;
+            animation-delay:0.9s;
+                -o-animation-delay:0.9s;
+                -ms-animation-delay:0.9s;
+                -webkit-animation-delay:0.9s;
+                -moz-animation-delay:0.9s;
+        }
+
+        #fountainG_4{
+            left:88px;
+            animation-delay:1.05s;
+                -o-animation-delay:1.05s;
+                -ms-animation-delay:1.05s;
+                -webkit-animation-delay:1.05s;
+                -moz-animation-delay:1.05s;
+        }
+
+        #fountainG_5{
+            left:117px;
+            animation-delay:1.2s;
+                -o-animation-delay:1.2s;
+                -ms-animation-delay:1.2s;
+                -webkit-animation-delay:1.2s;
+                -moz-animation-delay:1.2s;
+        }
+
+        #fountainG_6{
+            left:146px;
+            animation-delay:1.35s;
+                -o-animation-delay:1.35s;
+                -ms-animation-delay:1.35s;
+                -webkit-animation-delay:1.35s;
+                -moz-animation-delay:1.35s;
+        }
+
+        #fountainG_7{
+            left:175px;
+            animation-delay:1.5s;
+                -o-animation-delay:1.5s;
+                -ms-animation-delay:1.5s;
+                -webkit-animation-delay:1.5s;
+                -moz-animation-delay:1.5s;
+        }
+
+        #fountainG_8{
+            left:205px;
+            animation-delay:1.64s;
+                -o-animation-delay:1.64s;
+                -ms-animation-delay:1.64s;
+                -webkit-animation-delay:1.64s;
+                -moz-animation-delay:1.64s;
+        }
+
+
+
+        @keyframes bounce_fountainG{
+            0%{
+            transform:scale(1);
+                background-color:rgb(0,0,0);
+            }
+
+            100%{
+            transform:scale(.3);
+                background-color:rgb(255,255,255);
+            }
+        }
+
+    @-o-keyframes bounce_fountainG{
+        0%{
+        -o-transform:scale(1);
+            background-color:rgb(0,0,0);
+        }
+
+        100%{
+        -o-transform:scale(.3);
+            background-color:rgb(255,255,255);
+        }
+    }
+
+    @-ms-keyframes bounce_fountainG{
+        0%{
+        -ms-transform:scale(1);
+            background-color:rgb(0,0,0);
+        }
+
+        100%{
+        -ms-transform:scale(.3);
+            background-color:rgb(255,255,255);
+        }
+    }
+
+    @-webkit-keyframes bounce_fountainG{
+        0%{
+        -webkit-transform:scale(1);
+            background-color:rgb(0,0,0);
+        }
+
+        100%{
+        -webkit-transform:scale(.3);
+            background-color:rgb(255,255,255);
+        }
+    }
+
+    @-moz-keyframes bounce_fountainG{
+        0%{
+        -moz-transform:scale(1);
+            background-color:rgb(0,0,0);
+        }
+
+        100%{
+        -moz-transform:scale(.3);
+            background-color:rgb(255,255,255);
+        }
+    }
+
+
       #header {
         height:50px;
         padding:0 0 0 20px;
@@ -18,7 +205,7 @@
       #map {
         height: 100%;
         width:80%;
-                float:left;
+        float:left;
       }
       #sidebar{
         width: 20%;
@@ -27,6 +214,20 @@
         float:right;
         overflow:auto;
       }
+
+        .main-item {
+            width:100%;
+            height:20px;
+            cursor:pointer;
+            display:block;
+            border-bottom:2px solid #ccc;
+            font-size:15px;
+            padding:10px;
+            letter-spacing: 1px;
+            background: gray;
+            color:white;
+        }
+
       .item {
         width:100%;
         height:20px;
@@ -47,121 +248,6 @@
 
   </head>
   <body>
-    <div id="header">
-        <h2>Taiwan Distict location </h2>
-    </div>
-
-
-    <script>
-
-// This example creates a simple polygon representing the Bermuda Triangle.
-
-// function setMapFitBounds(map, mapPointArray){
-//     //console.log(mapPointArray);
-//     var minLong = 999;
-//     var maxLong = -999;
-//     var minLat = 999;
-//     var maxLat = -999;
-
-//     for (var key  in mapPointArray) {
-//         if ( mapPointArray[key].lng < minLong ) minLong = mapPointArray[key].lng;
-//         if ( mapPointArray[key].lng > maxLong ) maxLong = mapPointArray[key].lng;
-//         if ( mapPointArray[key].lat < minLat ) minLat = mapPointArray[key].lat;
-//         if ( mapPointArray[key].lat > maxLat ) maxLat = mapPointArray[key].lat;
-//     }
-
-//     var fitBounds = new google.maps.LatLngBounds(
-//                     new google.maps.LatLng( minLat, minLong ),
-//                      new google.maps.LatLng( maxLat, maxLong )
-//                      );
-
-//     if(typeof(fitBounds) == "object") {
-//         map.fitBounds(fitBounds);
-//         map.panTo(fitBounds.getCenter());
-//     }
-
-//     if(map.getZoom() > 16)
-//         map.setZoom(16);
-// }
-
-// function getCityCoords(cityId)
-// {
-//     var gpsPoint = {};
-//     var cityCoords = [];
-//     var data = $.data( document.body, "data");
-//     var gpsPointArray = data[cityId].split(';')[3].split(',');
-//     var index = 1;
-//     for (var key  in gpsPointArray) {
-//         if (index % 2 == 0) {
-//             gpsPoint.lng = parseFloat(gpsPointArray[key]);
-//             cityCoords.push(gpsPoint);
-//             gpsPoint = {};
-//         }
-//         else {
-//             gpsPoint.lat = parseFloat(gpsPointArray[key]);
-//         }
-//         //console.log(gpsPoint);
-//         index++;
-//     }
-//     return cityCoords;
-// }
-
-// function drawPolygon(cityCoords)
-// {
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//         zoom: 11,
-//         center: cityCoords[0] ,
-//         mapTypeId: google.maps.MapTypeId.ROADMAP
-//     });
-
-
-//     //console.log(cityCoords);
-//     var bermudaTriangle = new google.maps.Polygon({
-//         paths: cityCoords,
-//         strokeColor: '#FF0000',
-//         strokeOpacity: 0.8,
-//         strokeWeight: 2,
-//         fillColor: '#FF0000',
-//         fillOpacity: 0.35
-//     });
-//     setMapFitBounds(map, cityCoords);
-// console.log('d');
-//     bermudaTriangle.setMap(map);
-
-// }
-
-// function initMap() {
-//   $.get('./town_all_20160104105547.txt', function(raw){
-//     data = raw.split("\n");
-
-//     var sidebar =$('#sidebar');
-//     var html = '';
-//     for (var key  in data) {
-//         var item = data[key].split(';');
-//         //console.log(item);
-//         if (typeof item[0]!=undefined)
-//         html += '<div class="item" data="'+item[0]+'">'+item[0] + ''+ item[1] + ''+ item[2]+'</div>';
-//     }
-//     sidebar.html(html);
-
-//     $.data( document.body, "data", data);
-
-//     $('.item').on('click', function() {
-//         var cityId = $(this).attr('data');
-//         var cityCoords = getCityCoords(cityId)
-//         drawPolygon(cityCoords);
-//     });
-
-
-//     var cityCoords = getCityCoords(47)
-//     drawPolygon(cityCoords);
-
-//   });
-
-// }
-
-    </script>
-
     <script data-main="js/app" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcAOcLtB0wWLYkNpytAiQHUknMVJIOEOg&signed_in=true"></script>
