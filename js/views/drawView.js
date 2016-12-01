@@ -4,7 +4,6 @@ define([
     'backbone',
     'views/util',
     'text!templates/map.html'
-    //'text!templates/data.json'
 ], function( $, _, Backbone, Util, mapTemplate) {
 
     var DrawChart = Backbone.View.extend({
@@ -20,6 +19,7 @@ define([
         data : null,
         model : null,
         markersArray   :[],
+        resourceJSON : 'http://bladelin.github.io/myTowns/runtime/map.json',
         events: {
             'click .item': 'draw',
         },
@@ -29,7 +29,6 @@ define([
             that = this;
             this.$el.append( this.template());
             this.model = data.model;
-            //this.loadData(dataJson);
             this.firstLoad();
         },
 
@@ -47,16 +46,14 @@ define([
         firstLoad : function()
         {
             var that = this;
-            $.getJSON('runtime/map.json', function(json){
+            //'runtime/map.json'
+            $.getJSON(this.resourceJSON, function(json){
                 that.data = json;// $.parseJSON(raw);//raw.split("\n");
                 that.model.set({"data": that.data});
                 $.data( document.body, "data", that.data);
                 console.log('first load data');
                 that.firstProcess();
             });
-            // that.data = data;
-            //that.set(data);
-
         },
 
         firstProcess : function() {
@@ -157,7 +154,6 @@ define([
         drawPolygon : function(cityCoords)
         {
             this.deleteOverlays();
-            //console.log(cityCoords);
             var bermudaTriangle = new google.maps.Polygon({
                 paths: cityCoords,
                 strokeColor: '#FF0000',
