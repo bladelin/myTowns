@@ -1,10 +1,4 @@
 <?php
-$json_file = "runtime/map.json";
-if (is_file($json_file)) {
-    echo file_get_contents($json_file);
-    exit();
-}
-
 $countrySort = array (
   '宜蘭縣' => 1,
   '基隆市' => 2,
@@ -31,7 +25,7 @@ $countrySort = array (
 );
 
 
-$file = 'town_all_20160104105547.txt';
+$file = 'runtime/town_all_20160104105547.txt';
 $res = file_get_contents($file);
 $res = explode("\n", $res);
 
@@ -58,20 +52,23 @@ uksort($collection, function($a, $b) {
     }
     return ($countrySort[$a]  < $countrySort[$b]) ? -1 : 1;
 });
-// foreach ($collection as $country=>$val) {
-//     echo $country."\n";
-// }
-// die();
 
 function shrink($gps)
 {
-    $degree = 7;
+    $degree = 8;
     $newGps  = [];
+    $i = 0;
+    $accurancy = 8;
+    $cnt = count($gps);
     foreach ($gps as $key => $val) {
-        $index= substr($val[0], 0, $degree).substr($val[1], 0, $degree);
-        $val[0] = substr($val[0], 0, $degree+1);
-        $val[1] = substr($val[1], 0, $degree+1);
-        $newGps[$index] = $val;
+        if ($cnt <= 100 || $i % $accurancy == 0) {
+            $index= substr($val[0], 0, $degree).substr($val[1], 0, $degree);
+            $val[0] = substr($val[0], 0, $degree+1);
+            $val[1] = substr($val[1], 0, $degree+1);
+            $newGps[$index] = $val;
+        }
+        $i++;
+
     }
     return $newGps;
 }
@@ -96,7 +93,6 @@ function process($list)
 
 $content = json_encode($collection, true);
 echo $content;
-file_put_contents($json_file, $content);
 
 
 

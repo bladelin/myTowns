@@ -19,7 +19,7 @@ define([
         data : null,
         model : null,
         markersArray   :[],
-        resourceJSON : 'http://bladelin.github.io/myTowns/runtime/map.json',
+        resourceJSON : 'map.json',
         events: {
             'click .item': 'draw',
         },
